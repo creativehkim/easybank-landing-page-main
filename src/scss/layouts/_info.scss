@@ -2,6 +2,7 @@
 
 .info {
   background: $lighter-gray;
+  width: 100vw;
 
   &__container {
     padding: 4rem 1.5rem;
@@ -9,10 +10,14 @@
     &--items {
       display: flex;
       flex-direction: column;
+      justify-content: center;
 
       .info__item {
         .icon {
-          margin: 2rem auto;
+          margin: 2rem 0;
+          img {
+            margin: auto;
+          }
         }
       }
     }

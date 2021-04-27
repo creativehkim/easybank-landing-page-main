@@ -3,13 +3,13 @@
 .hero {
   &__container {
     position: relative;
-    height: calc(100vh - 80px);
+    height: 100vh;
     padding: 0 1.5rem;
 
     &--left {
       position: relative;
       z-index: 2;
-      top: 350px;
+      bottom: -50%;
       text-align: center;
     }
 
@@ -19,27 +19,41 @@
 
     &--right {
       background: url(/images/bg-intro-mobile.svg);
-      background-position: top;
+      background-position: bottom -50px right 0;
       background-size: cover;
       background-repeat: no-repeat;
       overflow: hidden;
       position: absolute;
-      top: -18%;
+      top: -8%;
       left: 50%;
       width: 100%;
+
       transform: translateX(-50%);
       z-index: 0;
 
       img {
         width: 100%;
+        margin: 0 auto;
+        max-width: 400px;
         padding: 0.5rem;
       }
     }
     @include tablet {
+      height: 100vh;
+
+      &--left {
+        top: 60%;
+      }
+
       &--right {
-        top: -50%;
-        background-size: contain;
+        max-width: 100%;
+        top: -15%;
+        background-size: cover;
         background-position: bottom;
+
+        img {
+          max-width: 500px;
+        }
       }
     }
   }
