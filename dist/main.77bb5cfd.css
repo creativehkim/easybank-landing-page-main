@@ -181,7 +181,7 @@ small {
   display: flex;
   padding: 0 1.5rem;
   justify-content: space-between;
-  z-index: 90;
+  z-index: 9999;
   position: fixed;
 }
 @media screen and (min-width: 1100px) {
@@ -219,17 +219,32 @@ small {
 @media screen and (min-width: 1100px) {
   .navbar__menu {
     display: flex;
-    text-align: center;
-    margin-right: 2rem;
+    margin: 0 auto;
   }
   .navbar__menu--links {
     color: #9597a5;
+    display: inline-block;
     text-decoration: none;
     justify-content: center;
     padding: 0 1rem;
+    position: relative;
+  }
+  .navbar__menu--links::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -28px;
+    background-color: #30c88f;
   }
   .navbar__menu--links:hover {
     color: #2d314d;
+    transition: all 0.3s ease;
+  }
+  .navbar__menu--links:hover::after {
+    transform-origin: 50%;
+    width: calc(100% - 2rem);
     transition: all 0.3s ease;
   }
 }
@@ -241,7 +256,7 @@ small {
   flex-direction: column;
   height: 265px;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
@@ -250,15 +265,6 @@ small {
 .navbar__menu.active a {
   color: #2d314d;
   margin-top: 1rem;
-}
-.navbar__menu.active::before {
-  content: "";
-  width: 100vw;
-  height: 90vh;
-  top: -16px;
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(180deg, #2d314d 0%, rgba(45, 49, 77, 0.0001) 100%);
 }
 
 .hero__container {
@@ -291,24 +297,19 @@ small {
 .hero__container--right img {
   width: 100%;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 600px;
   padding: 0.5rem;
 }
 @media screen and (min-width: 768px) {
   .hero__container {
     height: 100vh;
   }
-  .hero__container--left {
-    top: 60%;
-  }
   .hero__container--right {
+    background: url(/bg-intro-desktop.d745898a.svg);
     max-width: 100%;
     top: -15%;
     background-size: cover;
     background-position: bottom;
-  }
-  .hero__container--right img {
-    max-width: 500px;
   }
 }
 
@@ -328,12 +329,11 @@ small {
     width: 40%;
   }
   .hero__container--right {
-    background: url(/bg-intro-desktop.d745898a.svg);
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
     top: -20%;
-    right: 0;
+    right: 10%;
     transform: translateX(50%);
     margin-left: auto;
   }

@@ -34,26 +34,19 @@
       img {
         width: 100%;
         margin: 0 auto;
-        max-width: 400px;
+        max-width: 600px;
         padding: 0.5rem;
       }
     }
     @include tablet {
       height: 100vh;
 
-      &--left {
-        top: 60%;
-      }
-
       &--right {
+        background: url(/images/bg-intro-desktop.svg);
         max-width: 100%;
         top: -15%;
         background-size: cover;
         background-position: bottom;
-
-        img {
-          max-width: 500px;
-        }
       }
     }
   }
@@ -76,13 +69,12 @@
       }
 
       &--right {
-        background: url(/images/bg-intro-desktop.svg);
         background-size: contain;
         background-position: top;
         background-repeat: no-repeat;
 
         top: -20%;
-        right: 0;
+        right: 10%;
         transform: translateX(50%);
         margin-left: auto;
 
