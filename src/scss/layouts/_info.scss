@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+.info {
+  background: $lighter-gray;
+
+  &__container {
+    padding: 4rem 1.5rem;
+
+    &--items {
+      display: flex;
+      flex-direction: column;
+
+      .info__item {
+        .icon {
+          margin: 2rem auto;
+        }
+      }
+    }
+
+    @include desktop {
+      &--intro {
+        width: 60%;
+
+        p {
+          margin-bottom: 4rem;
+        }
+      }
+
+      &--items {
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-size: 16px;
+        }
+
+        .info__item {
+          max-width: 255px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@use '../abstracts/' as *;
+
+.hero {
+  &__container {
+    position: relative;
+    height: calc(100vh - 80px);
+    padding: 0 1.5rem;
+
+    &--left {
+      position: relative;
+      z-index: 2;
+      top: 350px;
+      text-align: center;
+    }
+
+    &--btn {
+      margin-top: 2rem;
+    }
+
+    &--right {
+      background: url(/images/bg-intro-mobile.svg);
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      position: absolute;
+      top: -18%;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
+      z-index: 0;
+
+      img {
+        width: 100%;
+        padding: 0.5rem;
+      }
+    }
+    @include tablet {
+      &--right {
+        top: -50%;
+        background-size: contain;
+        background-position: bottom;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .hero {
+    position: relative;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      height: 80vh;
+
+      &--left {
+        text-align: left;
+        top: 0;
+        width: 40%;
+      }
+
+      &--right {
+        background: url(/images/bg-intro-desktop.svg);
+        background-size: contain;
+        background-position: top;
+        background-repeat: no-repeat;
+
+        top: -20%;
+        right: 0;
+        transform: translateX(50%);
+        margin-left: auto;
+
+        img {
+          width: 80%;
+          max-width: 800px;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@use '../abstracts/' as *;
+
+.footer {
+  background: $dark-gray;
+
+  &__top {
+    padding: 2.5rem 0;
+
+    &--logo {
+      margin-bottom: 2rem;
+    }
+    &--social {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 45%;
+      max-width: 145px;
+
+      &__icon {
+        cursor: pointer;
+        width: 24px;
+        margin: auto;
+
+        &:hover {
+          color: $primary-green;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    margin-bottom: 2rem;
+    &--item {
+      margin-bottom: 1rem;
+      a {
+        color: $lighter-gray;
+        font-weight: $fw-light;
+
+        &:hover {
+          color: $primary-green;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+  &__bottom {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+
+    &--btn {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    height: 200px;
+
+    &__top {
+      padding: 0 2rem;
+      margin-right: auto;
+      &--social {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    &__nav {
+      display: grid;
+      align-items: center;
+      margin: 0;
+
+      &--list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+
+      &--item {
+        margin: 0.5rem 0;
+      }
+    }
+
+    &__bottom {
+      padding: 0;
+      text-align: right;
+
+      &--copyright {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  background: $dark-gray;
+  color: white;
+  padding: 1rem;
+}
+
+.attribution a {
+  color: $primary-green;
+}

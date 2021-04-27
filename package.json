@@ -1,0 +1,27 @@
+{
+  "name": "easybank-landing-page-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Easybank landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativehkim/easybank-landing-page-main.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/creativehkim/easybank-landing-page-main/issues"
+  },
+  "homepage": "https://github.com/creativehkim/easybank-landing-page-main#readme",
+  "devDependencies": {
+    "sass": "^1.32.11"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

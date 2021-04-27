@@ -1,0 +1,76 @@
+@use '../abstracts' as *;
+@use '../base';
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  background-color: $white;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  padding: 0 1.5rem;
+  justify-content: space-between;
+  z-index: 10;
+  position: fixed;
+
+  @extend %align-center;
+
+  @include desktop {
+    height: 80px;
+
+    .navbar__menu--btn {
+      display: block;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+
+    @extend %align-center;
+  }
+
+  &__bars {
+    color: $dark-gray;
+    opacity: 1;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 1.5rem;
+    user-select: none;
+    cursor: pointer;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  button {
+    display: none;
+  }
+
+  &__menu {
+    display: none;
+    @extend %align-center;
+
+    @include desktop {
+      display: flex;
+      text-align: center;
+      margin-right: 2rem;
+
+      &--links {
+        color: $light-gray;
+        text-decoration: none;
+        justify-content: center;
+        padding: 0 1rem;
+
+        &:hover {
+          color: $dark-gray;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+}
